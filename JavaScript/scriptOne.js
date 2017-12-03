@@ -23,13 +23,13 @@ function CheckPhone()
 function DataChecking() //function to check if there is data within all boxes and that certain data (phone and email) are in a correct format
 {
     var elements = document.getElementsByClassName("StudentInfo");
-
+    var name = document.getElementsByTagName("label");
     for(var i =0; i < elements.length; i++)
     {
         var WarningArea  = $("warnings");
         if(elements[i].value.length == 0) //check if any of the StudentInfo boxes in main.html are empty, if they are change the borderColor of the box to red to highlight
         {
-            var name = document.getElementsByTagName("label");
+            
             elements[i].style.borderColor = "red";
             WarningArea.innerHTML += name[i].innerHTML + " is blank! <br>"; 
         }
@@ -44,7 +44,7 @@ function DataChecking() //function to check if there is data within all boxes an
     }
     else
     {
-        return false;
+        return true;
     }
 
 }

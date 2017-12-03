@@ -8,7 +8,7 @@
     
     <header>
         <h1 id = "Title_Header">Presentation Registration</h1>
-        <link rel = "stylesheet" href = "Formatting.css">
+        <link rel = "stylesheet" href = "CSS/Formatting.css">
         <script src = "JavaScript/scriptOne.js"></script>
         
     </header>
@@ -16,7 +16,7 @@
         <main>
             <section id = "Data_Entry">
                 <h2>Enter in your information, then hit next to see a list of timeslots.</h2>
-                <form id = "EntryForm" action = "InformationHandling.php" method = "POST">
+                <form id = "EntryForm" action = "PHP/InformationHandling.php" method = "POST">
                     <label for = "StudentNum">Student Number</label> <br>
                     <input type = "text" id = "SNum" name = "StudentNum" class = "StudentInfo"> <br>
 
@@ -42,6 +42,11 @@
                 <p id = "warnings">
 
                 </p>
+
+                <form action = "PHP/DisplayStudents.php" method = "POST">
+                    <input type = "submit" id = "DisplayAll" name = "Display" value = "Display">
+                </form>
+                 
             </section>
 
         </main>
