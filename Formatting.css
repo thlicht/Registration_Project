@@ -1,0 +1,80 @@
+table, th, td{
+    border: 3px solid black;
+    
+}
+
+table{
+    border-collapse: collapse;
+    width: 55%;
+    margin: 25px;
+    padding: 10px;
+}
+
+th{
+    height: 50px;
+}
+
+th,tr{
+    height: 25px;
+    width: 10px;
+}
+
+#Display{
+    font-size: 1.75em;
+    margin: 25px;
+}
+
+#EntryForm{
+    width: 80%;
+}
+
+input[type = text]{
+    width: 40%;
+    padding: 5px;
+    border: 1 px solid#ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type = email]{
+    width: 40%;
+    padding: 5px;
+    border: 1 px solid black;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type=tel]
+{
+    width: 40%;
+    padding: 5px;
+    border: 1 px solid black;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+
+main{
+    background-color: darkgray;
+}
+
+.panel{
+    display: none;
+}
+
+button.accordion{
+    background-color: darkgrey;
+    cursor: pointer;
+    padding: 18px;
+    width: 75%;
+    border: 2px solid black;
+    text-align:left;
+    transition: 0.3s;
+}
+
