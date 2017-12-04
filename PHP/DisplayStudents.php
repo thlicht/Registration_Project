@@ -23,6 +23,7 @@
                     <th>Project Title</th>
                     <th>Email</th>
                     <th>Phone #</th>
+                    <td>Presentation Date</th>
                 </tr>
                 <?php
                     while($row = mysqli_fetch_assoc($info))
@@ -34,6 +35,7 @@
                         <td>{$row['Project']}</td>
                         <td>{$row['Email']}</td>
                         <td>{$row['Phone']}</td>
+                        <td>{$row['PresentationDate']}</td>
                             </tr>\n";
                     } 
                 ?>
