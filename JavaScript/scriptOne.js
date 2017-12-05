@@ -5,7 +5,7 @@ var $ = function(id) //shorthand function to get elementID
 
 function CheckEmail()
 {
-    var EmailForm = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var EmailForm = /^[a-zA-Z0-9]{1,}[@]{1}([a-zA-Z0-9]{1,20}[.]{1}){1,4}[a-zA-Z]{3}$/;
     var Email = $("Email");
 
     if(Email.value.match(EmailForm))
@@ -14,7 +14,7 @@ function CheckEmail()
     }
     var WarningArea = $("warnings");
     Email.style.borderColor = "red";
-    WarningArea.innerHTML += "Email is in incorrect form <br>";
+    WarningArea.innerHTML += "Email is in incorrect form, must be in form name@domain.com/net/org... <br>";
     return false;
 }
 
@@ -36,7 +36,7 @@ function CheckSno()
 
 function CheckName()
 {
-    var NameForm = /^([a-zA-Z]{1,}) $/;
+    var NameForm = /^([a-zA-Z]{1,})$/;
     var FirstName = $("FirstName");
     var LastName = $("LastName");
 
@@ -62,7 +62,7 @@ function CheckPhone()
 
     var WarningArea = $("warnings");
     Phone.style.borderColor = "red";
-    WarningArea.innerHTML += "Phone Number is in incorrect form <br>";
+    WarningArea.innerHTML += "Phone Number is in incorrect form, must be in form ###-###-#### <br>";
     return false;
 }
 
@@ -89,7 +89,7 @@ function DataChecking() //function to check if there is data within all boxes an
     var Phone = CheckPhone(); //check that phone number is in format ###-###-####
     var Email = CheckEmail(); //check that email is in forat x_x.@xxx.xxx
     var NameCheck = CheckName(); //check that name is
-    if (Sno && Phone && !Empty && NameCheck) //check all data fields are populated and in correct format
+    if (Sno && Phone && !Empty && NameCheck && Email) //check all data fields are populated and in correct format
     {
         return true;
     }

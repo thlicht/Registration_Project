@@ -9,12 +9,13 @@
         $Project = htmlspecialchars($_POST['StudentProject']);
         $email = htmlspecialchars($_POST['StudentEmail']);
         $phone = htmlspecialchars($_POST['StudentPhone']);
+        $Date = $_POST['Selector'];
 
-        $Insert  = "INSERT INTO student_info (StudentNum , FName, LName, Project, Email, Phone) VALUES ('$SNo', '$Fname', '$Lname', '$Project', '$email', '$phone')";
+        $Insert  = "INSERT INTO student_info (StudentNum , FName, LName, Project, Email, Phone, PresentationDate) VALUES ('$SNo', '$Fname', '$Lname', '$Project', '$email', '$phone', '$Date')";
 
         if(mysqli_query($db, $Insert) === TRUE)
         {
-            echo "New record";
+            echo "Congratulations, $Fname you have registered to present your project on $Date";
         }
         else
         {
