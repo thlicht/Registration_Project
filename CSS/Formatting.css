@@ -19,19 +19,76 @@ th,tr{
     width: 10px;
 }
 
-#Display{
-    font-size: 1.75em;
-    margin: 25px;
+header{
+    color: whitesmoke;
+}
+
+#InfoEnter{
+    display: inline;
+    color: whitesmoke;
+}
+
+#MasterHeadline{
+    color: whitesmoke;
+}
+
+#Warning{
+    float: left;
+    clear: both;
+}
+
+#Data_Entry{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 75%;
+    color: whitesmoke;
+}
+#DisplayAll{
+    font-size:1.15em;
+    position: absolute;
+}
+
+.wrapper{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+footer{
+    margin: auto;
+    width: 50%;
 }
 
 #EntryForm{
-    width: 80%;
+    font-size: 1.1em;
+    width: 70%;
 }
 
+#Master{
+    width: 50%;
+    margin: auto;
+
+}
+
+
+
+#Submit{
+    border-radius: 3px;
+    background-color: #ccc;
+    font-size: 1.15em;
+    border:none;
+}
+
+#Title_Header{
+    text-align: center;
+    text-shadow: black 1px 1px;
+}
+
+
 input[type = text]{
-    width: 40%;
+    width: 100%;
     padding: 5px;
-    border: 1 px solid#ccc;
+    border: 5 px solid#ccc;
     box-sizing: border-box;
     border-radius: 4px;
     margin-top: 6px;
@@ -39,7 +96,7 @@ input[type = text]{
 }
 
 input[type = email]{
-    width: 40%;
+    width: 100%;
     padding: 5px;
     border: 1 px solid black;
     box-sizing: border-box;
@@ -50,7 +107,7 @@ input[type = email]{
 
 input[type=tel]
 {
-    width: 40%;
+    width: 100%;
     padding: 5px;
     border: 1 px solid black;
     box-sizing: border-box;
@@ -60,21 +117,9 @@ input[type=tel]
 }
 
 
-main{
-    background-color: darkgray;
+html{
+    background-image: url("../images/blackgrey_min.jpg")
 }
 
-.panel{
-    display: none;
-}
 
-button.accordion{
-    background-color: darkgrey;
-    cursor: pointer;
-    padding: 18px;
-    width: 75%;
-    border: 2px solid black;
-    text-align:left;
-    transition: 0.3s;
-}
 

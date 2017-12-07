@@ -2,26 +2,29 @@
     $conn = require 'dbConnect.php';
     include 'InformationInsert.php';
 
-
     $StudentNumber = $_POST['StudentNum'];
     $query = "SELECT * FROM student_info WHERE StudentNum = '$StudentNumber'";
-    if($name = mysqli_query($conn , $query))
+    if($StudentNumber != "")
     {
-        $na = mysqli_fetch_assoc($name);
-        if($StudentNumber == $na['StudentNum'])
+        if($name = mysqli_query($conn , $query))
         {
-            $FirstName = $na['FName'];
-            $Date = date_create($na['PresentationDate']);
-            $DateTwo = date_format($Date, 'm/d/Y g:iA');
-            echo "Hello, $FirstName our records indicated that you have already registered for a presentation on $DateTwo <br>";
-            echo "You may change your presentation date, but you will lose your current day.";
+            $na = mysqli_fetch_assoc($name);
+            if($StudentNumber == $na['StudentNum'])
+            {
+                $FirstName = $na['FName'];
+                $Date = date_create($na['PresentationDate']);
+                $DateTwo = date_format($Date, 'm/d/Y g:iA');
+                echo "Hello, $FirstName our records indicated that you have already registered for a presentation on $DateTwo <br>";
+                echo "You may change your presentation date, but you will lose your current day.";
+            }
+            
         }
-        
+        else
+        {
+            echo "fail";
+        }
     }
-    else
-    {
-        echo "fail";
-    }
+    
     
     $SlotOneQuery = "SELECT * FROM student_info WHERE PresentationDate = '2017-12-03 19:00:00'";
     $SlotOneResult = mysqli_query($conn, $SlotOneQuery);
@@ -53,18 +56,18 @@
     
     <meta charset="UTF-8">
     <title>
-        Presentation Registration Page
+        Date Selection Page
     </title>
     
     <header>
-        <h1 id = "Title_Header">Presentation Registration</h1>
-        <link rel = "stylesheet" href = "http://localhost/CIS435P3/CSS/Formatting.css">
+        <h1 id = "Title_Header">Date Selection: Step 2/2</h1>
+        <link rel = "stylesheet" href = "http://localhost/CIS435P3/CSS/DateSelectionFormatting.css">
         <script src = "http://localhost/CIS435P3/JavaScript/DateSelector.js"></script>
     </header>
             
         <main>
-            <h2>Select the timeslot that you want to register for, then click register</h2>
-            <form method = "POST" action = "InformationInsert.php">
+            <h2 id = "info_header">Select the timeslot that you want to register for, then click register</h2>
+            <form method = "POST" action = "InformationInsert.php" id ="DateSelector">
                 <input type = "radio" name = "Selector" value = "2017-12-03 19:00:00" id = "SlotOne">
                 <label for ="SlotOne">12/03/2017 7:00PM <?php echo $SlotOneNum?> Seats avaliable</label><br>
                 <input type = "radio" name = "Selector" value = "2017-12-03 20:00:00" id = "SlotTwo">
@@ -77,7 +80,6 @@
                 <label for = "SlotFive">12/17/2017 7:00PM <?php echo $SlotFiveNum?> Seats avaliable</label><br>
                 <input type = "radio" name = "Selector" value = "2017-12-17 20:00:00" id = "SlotSix">
                 <label for = "SlotSix">12/17/2017 8:00PM <?php echo $SlotSixNum?> Seats avaliable</label><br>
-                <input type = "button" value = "Test" id = "Test" onclick = "PreselectDay()">
                 <input type = "hidden" name = "StudentID" value = "<?php echo htmlspecialchars($_POST['StudentNum'])?>">
                 <input type = "hidden" name = "StudentFname" value = "<?php echo htmlspecialchars($_POST['FName']) ?>">
                 <input type = "hidden" name = "StudentLname" value = "<?php echo htmlspecialchars($_POST['LName'])?>" >
@@ -87,6 +89,18 @@
                 <input type = "hidden" name = "Present" value = "<?php echo $na['PresentationDate']?>" id = "PresentDate">
                 <input type = "submit" id = "Register" value = "Register">
             </form>
+            <br>
+            <br>
+            <br>
+            <footer>
+                <section id = "Warning">
+                    <h2 id = "MasterHeadline"><span>To view a master list of students registered to present, click on the button below:</span></h2>
+                        <form action = "http://localhost/CIS435P3/PHP/DisplayStudents.php" method = "POST" id = "Master">
+                            <div class = "wrapper"><input type = "submit" id = "DisplayAll" name = "Display" value = "Display Master List"></div>
+                            
+                        </form>
+                </section>
+            </footer>
         </main>
 
     

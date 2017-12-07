@@ -1,0 +1,36 @@
+html{
+    background-image: url("../images/blackgrey_min.jpg");
+}
+
+#DateSelector{
+    color:whitesmoke;
+    font-size: 1.75em;
+}
+
+#info_header{
+    color:whitesmoke;
+    font-size: 1.75em;
+}
+
+#Title_Header{
+    width: 75%;
+    color: whitesmoke;
+}
+
+#DisplayAll{
+    font-size:1.15em;
+    position: absolute;
+}
+
+#Warning{
+    float: left;
+    clear: both;
+}
+
+#Register{
+    font-size: .60em;
+}
+
+#MasterHeadline{
+    color: whitesmoke;
+}

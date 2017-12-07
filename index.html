@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+    
+    <meta charset="UTF-8">
+    <title>
+        Presentation Registration Page
+    </title>
+    
+    <header>
+        <h1 id = "Title_Header">Information Entry: Step 1/2</h1>
+        <link rel = "stylesheet" href = "http://localhost/CIS435P3/CSS/Formatting.css">
+        <script src = "http://localhost/CIS435P3/JavaScript/scriptOne.js"></script>
+        
+    </header>
+    
+        <main>
+            <section id = "Data_Entry">
+                <h2 id = "InfoEnter">Enter in your information, then hit next to see a list of timeslots.</h2>
+                <br>
+                <br>
+                <form id = "EntryForm" action = "PHP/InformationHandling.php" method = "POST">
+                    <label for = "StudentNum">Student Number</label>
+                    <input type = "text" id = "SNum" name = "StudentNum" class = "StudentInfo" placeholder = "e.g. 12345678"> <br>
+                    <p id = "StuNumError"></p>
+
+                    <label for = "FirstName">First Name</label>
+                    <input type = "text" id = "FirstName" name = "FName" class = "StudentInfo" placeholder="First Name"> <br>
+                    <p id = "FNameError"></p>
+
+                    <label for = "LastName">Last Name</label>
+                    <input type = "text" id = "LastName" name = "LName" class = "StudentInfo" placeholder="Last Name"> <br>
+                    <p id = "LNameError"></p>
+
+                    <label for = "ProjectTitle">Project Title</label>
+                    <input type = "text" id = "ProjectTitle" name = "Title" class = "StudentInfo" placeholder="Your Project Name"> <br>
+                    <p id = "TitleError"></p>
+
+                    <label for = "Email">Email</label>
+                    <input type = "email" id = "Email" name = "mail" class = "StudentInfo" placeholder="e.g. name@domain.com"> <br>
+                    <p id = "EmailError"></p>
+
+                    <label for = "PhoneNum">Phone Number</label>
+                    <input type = "tel" id = "PhoneNum" name = "phone" class = "StudentInfo" placeholder="e.g. 123-456-7890"> <br>
+                    <p id = "PhoneError"></p>
+
+                    <input type = "submit" name = "Submit" id = "Submit" value = "Next" onclick = "return DataChecking()">
+                </form>
+            </section>
+            <footer>
+                <section id = "Warning">
+                    <h2 id = "MasterHeadline"><span>To view a master list of students registered to present, click on the button below:</span></h2>
+                        <form action = "PHP/DisplayStudents.php" method = "POST" id = "Master">
+                            <div class = "wrapper"><input type = "submit" id = "DisplayAll" name = "Display" value = "Display Master List"></div>
+                            
+                        </form>
+                </section>
+            </footer>
+            
+
+        </main>
+
+    
+    
+</html>
+

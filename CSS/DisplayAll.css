@@ -1,8 +1,16 @@
+html{
+    background-image: url("../images/blackgrey_min.jpg");
+}
+
 table{
     border-collapse: collapse;
     font-size: 1.5em;
+    text-align: center;
+    color: whitesmoke;
 }
+
 
 table, th, td{
     border: 2px solid black;
+    padding: 5px;
 }

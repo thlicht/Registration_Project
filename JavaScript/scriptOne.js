@@ -12,7 +12,7 @@ function CheckEmail()
     {
         return true;
     }
-    var WarningArea = $("warnings");
+    var WarningArea = $("EmailError");
     Email.style.borderColor = "red";
     WarningArea.innerHTML += "Email is in incorrect form, must be in form name@domain.com/net/org... <br>";
     return false;
@@ -28,7 +28,7 @@ function CheckSno()
         return true;
     }
 
-    var WarningArea = $("warnings");
+    var WarningArea = $("StuNumError");
     StuNum.style.borderColor = "red";
     WarningArea.innerHTML += "Student Number must be 8-digits long <br>";
     return false;
@@ -45,10 +45,12 @@ function CheckName()
         return true;
     }
 
-    var WarningArea = $("warnings");
+    var WarningArea = $("FNameError");
+    var WarningArea2 = $("LNameError");
     FirstName.style.borderColor = "red";
     LastName.style.borderColor = "red";
-    WarningArea.innerHTML += "First Name or Last Name is in incorrect form <br>";
+    WarningArea.innerHTML += "First Name is in incorrect form <br>";
+    WarningArea2.innerHTML += "Last Name is in incorrect form <br>";
     return false;
 }
 function CheckPhone()
@@ -60,7 +62,7 @@ function CheckPhone()
         return true;
     }
 
-    var WarningArea = $("warnings");
+    var WarningArea = $("PhoneError");
     Phone.style.borderColor = "red";
     WarningArea.innerHTML += "Phone Number is in incorrect form, must be in form ###-###-#### <br>";
     return false;
@@ -73,18 +75,17 @@ function DataChecking() //function to check if there is data within all boxes an
     var Empty = false;
     for(var i =0; i < elements.length; i++)
     {
-        var WarningArea  = $("warnings");
         if(elements[i].value.length == 0) //check if any of the StudentInfo boxes in main.html are empty, if they are change the borderColor of the box to red to highlight
         {
             Empty = true;
             elements[i].style.borderColor = "red";
-            WarningArea.innerHTML += name[i].innerHTML + " is blank! <br>"; 
         }
         else
         {
             elements[i].style.borderColor = "green";
         }
     }
+
     var Sno = CheckSno(); //check Student number is 8 digits long
     var Phone = CheckPhone(); //check that phone number is in format ###-###-####
     var Email = CheckEmail(); //check that email is in forat x_x.@xxx.xxx

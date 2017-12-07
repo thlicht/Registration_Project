@@ -33,14 +33,14 @@
         $Date = $_POST['Selector'];
 
         $Insert  = "INSERT INTO student_info (StudentNum , FName, LName, Project, Email, Phone, PresentationDate) VALUES ('$SNo', '$Fname', '$Lname', '$Project', '$email', '$phone', '$Date')";
-
+        
         if(mysqli_query($db, $Insert) === TRUE)
         {
-            echo "Congratulations, $Fname you have registered to present your project on $Date";
+            echo "Congratulations $Fname, you have registered to present your project on $Date";
         }
         else
         {
-            echo "Error";
+            echo "Error" .$Insert . "<br>" . mysqli_error($db);
         }
     } 
 
